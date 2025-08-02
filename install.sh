@@ -309,11 +309,7 @@ if [[ "${#colors[@]}" -eq 0 ]]; then
   colors=("${COLOR_VARIANTS[@]}")
 fi
 install_theme() {
-  for theme in "${themes[@]}"; do
-    for color in "${colors[@]}"; do
-      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}"
-    done
-  done
+  install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "" ""
 }
 
 uninstall_theme() {
