@@ -82,7 +82,7 @@ install() {
     rm -rf "${THEME_DIR}"/places/scalable/user-trash{'','-full'}-dark.svg
 
     cp -r "${SRC_DIR}"/links/{actions,apps,categories,devices,emblems,mimes,places,status,preferences} "${THEME_DIR}"
-    ln -s "${THEME_DIR}"/preferences/32 "${THEME_DIR}"/preferences/22
+    ln "${THEME_DIR}"/preferences/32 "${THEME_DIR}"/preferences/22
   fi
  #if [[ ${theme} != '' ]]; then
  #     cp -r "${SRC_DIR}"/colors/color${theme}/folder.svg                                          "${THEME_DIR}"/mimes/scalable/inode-directory.svg
@@ -103,17 +103,17 @@ install() {
     cp -r "${SRC_DIR}"/links/status/{16,22,24}                                               "${THEME_DIR}"/status
 
     cd ${dest}
-    ln -s ../${name}${theme}/actions ${name}${theme}-light/actions
-    ln -s ../${name}${theme}/animations ${name}${theme}-light/animations
-    ln -s ../${name}${theme}/apps ${name}${theme}-light/apps
-    ln -s ../${name}${theme}/categories ${name}${theme}-light/categories
-    ln -s ../${name}${theme}/devices ${name}${theme}-light/devices
-    ln -s ../${name}${theme}/emblems ${name}${theme}-light/emblems
-    ln -s ../${name}${theme}/mimes ${name}${theme}-light/mimes
-    ln -s ../${name}${theme}/places ${name}${theme}-light/places
-    ln -s ../${name}${theme}/preferences ${name}${theme}-light/preferences
-    ln -s ../../${name}${theme}/status/32 ${name}${theme}-light/status/32
-    ln -s ../../${name}${theme}/status/symbolic ${name}${theme}-light/status/symbolic  
+    ln ../${name}${theme}/actions ${name}${theme}-light/actions
+    ln ../${name}${theme}/animations ${name}${theme}-light/animations
+    ln ../${name}${theme}/apps ${name}${theme}-light/apps
+    ln ../${name}${theme}/categories ${name}${theme}-light/categories
+    ln ../${name}${theme}/devices ${name}${theme}-light/devices
+    ln ../${name}${theme}/emblems ${name}${theme}-light/emblems
+    ln ../${name}${theme}/mimes ${name}${theme}-light/mimes
+    ln ../${name}${theme}/places ${name}${theme}-light/places
+    ln ../${name}${theme}/preferences ${name}${theme}-light/preferences
+    ln ../../${name}${theme}/status/32 ${name}${theme}-light/status/32
+    ln ../../${name}${theme}/status/symbolic ${name}${theme}-light/status/symbolic  
   fi
  
 
@@ -163,21 +163,21 @@ install() {
     cp -r "${SRC_DIR}"/links/mimes/symbolic                                                  "${THEME_DIR}"/mimes
 
     cd ${dest}
-    ln -s ../${name}${theme}/animations ${name}${theme}-dark/animations
-    ln -s ../${name}${theme}/preferences ${name}${theme}-dark/preferences
-    ln -s ../../${name}${theme}/categories/32 ${name}${theme}-dark/categories/32
-    ln -s ../../${name}${theme}/emblems/16 ${name}${theme}-dark/emblems/16
-    ln -s ../../${name}${theme}/emblems/22 ${name}${theme}-dark/emblems/22
-    ln -s ../../${name}${theme}/emblems/24 ${name}${theme}-dark/emblems/24
-    ln -s ../../${name}${theme}/mimes/16 ${name}${theme}-dark/mimes/16
-    ln -s ../../${name}${theme}/mimes/22 ${name}${theme}-dark/mimes/22
-    ln -s ../../${name}${theme}/mimes/scalable ${name}${theme}-dark/mimes/scalable
-    ln -s ../../${name}${theme}/apps/scalable ${name}${theme}-dark/apps/scalable
-    ln -s ../../${name}${theme}/devices/scalable ${name}${theme}-dark/devices/scalable
-    ln -s ../../${name}${theme}/status/16 ${name}${theme}-dark/status/16
-    ln -s ../../${name}${theme}/status/22 ${name}${theme}-dark/status/22
-    ln -s ../../${name}${theme}/status/24 ${name}${theme}-dark/status/24
-    ln -s ../../${name}${theme}/status/32 ${name}${theme}-dark/status/32
+    ln ../${name}${theme}/animations ${name}${theme}-dark/animations
+    ln ../${name}${theme}/preferences ${name}${theme}-dark/preferences
+    ln ../../${name}${theme}/categories/32 ${name}${theme}-dark/categories/32
+    ln ../../${name}${theme}/emblems/16 ${name}${theme}-dark/emblems/16
+    ln ../../${name}${theme}/emblems/22 ${name}${theme}-dark/emblems/22
+    ln ../../${name}${theme}/emblems/24 ${name}${theme}-dark/emblems/24
+    ln ../../${name}${theme}/mimes/16 ${name}${theme}-dark/mimes/16
+    ln ../../${name}${theme}/mimes/22 ${name}${theme}-dark/mimes/22
+    ln ../../${name}${theme}/mimes/scalable ${name}${theme}-dark/mimes/scalable
+    ln ../../${name}${theme}/apps/scalable ${name}${theme}-dark/apps/scalable
+    ln ../../${name}${theme}/devices/scalable ${name}${theme}-dark/devices/scalable
+    ln ../../${name}${theme}/status/16 ${name}${theme}-dark/status/16
+    ln ../../${name}${theme}/status/22 ${name}${theme}-dark/status/22
+    ln ../../${name}${theme}/status/24 ${name}${theme}-dark/status/24
+    ln ../../${name}${theme}/status/32 ${name}${theme}-dark/status/32
   fi
 
  if [[ ${theme} != '' ]]; then
@@ -186,16 +186,16 @@ install() {
 
   (
     cd "${THEME_DIR}"
-    ln -sf actions actions@2x
-    ln -sf animations animations@2x
-    ln -sf apps apps@2x
-    ln -sf categories categories@2x
-    ln -sf devices devices@2x
-    ln -sf emblems emblems@2x
-    ln -sf mimes mimes@2x
-    ln -sf places places@2x
-    ln -sf preferences preferences@2x
-    ln -sf status status@2x
+    lnf actions actions@2x
+    lnf animations animations@2x
+    lnf apps apps@2x
+    lnf categories categories@2x
+    lnf devices devices@2x
+    lnf emblems emblems@2x
+    lnf mimes mimes@2x
+    lnf places places@2x
+    lnf preferences preferences@2x
+    lnf status status@2x
   )
   gtk-update-icon-cache "${THEME_DIR}"
   
